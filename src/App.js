@@ -39,6 +39,8 @@ class App extends Component {
 
     return (
       <div className='container'>
+      <div className="page">
+      <div className="select-dropdown">
         <select onChange={this.updateHouse}>
           <option value="">Select a House</option>
           <option value="2">RavenClosure</option>
@@ -46,14 +48,20 @@ class App extends Component {
           <option value="3">SlytherIndentYourCode</option>
           <option value="4">GitHubblePuff</option>
         </select>
+        </div>
 
-        <select onChange={this.updateSuite}>
+      
+      <div className="select-dropdown">
+        <select className="select" onChange={this.updateSuite}>
           <option value="loops">Select a Collection</option>
           <option value="loops">loops</option>
           <option value="conditionals">conditionals</option>
           <option value="functions">functions</option>
         </select>
-        <div className='border'>
+        </div>
+        </div>
+        <div className='border instructions'>
+        <h2>Instructions</h2>
           {this.state.questionList.length && this.state.questionList[this.state.current].instructions}
         </div>
 
