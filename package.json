@@ -2,18 +2,24 @@
   "name": "drills",
   "version": "0.1.0",
   "private": true,
+  "main": "index.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "chai": "^4.1.2",
+    "express": "^4.16.3",
     "mocha": "^5.2.0",
+    "mysql2": "^1.6.1",
     "react": "^16.4.2",
     "react-codemirror": "^1.0.0",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "sequelize": "^4.38.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "seed": "node ./seeds/seed-db"
   }
 }

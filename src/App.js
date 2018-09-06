@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror';
 import qList from './questions.js';
+import axois from 'axios';
 require('codemirror/mode/javascript/javascript');
 
 class App extends Component {
@@ -29,7 +30,17 @@ class App extends Component {
      this.setState({ code: newCode? newCode : this.state.questionList[this.state.current].code})
   }
 
-  post = ()  => {}
+  post = ()  => {
+    console.log('tests', this.state.questionList[this.state.current].tests);
+    console.log('qlist', this.state.questionList);
+    console.log('current', this.state.current);
+    console.log('currQlist', this.state.questionList[this.state.current]);
+    axois.post('/api/tests', {
+      code: this.state.code,
+      house_id: this.state.house,
+      tests: this.state.questionList[this.state.current].tests
+    }).then(response => console.log(response));
+  }
 
   render() {
     const options = { 
