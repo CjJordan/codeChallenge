@@ -1,8 +1,8 @@
 const qList = [
     {
-        instructions:'something',
+        instructions:'Create a loop that sums the number from 1 to 172, inclusively. Save the sum in a global variable called total.',
         code: 'blah',
-        test: 'blah',
+        test: ['Test.expect(total == 14878)'],
         suite: 'loops'
     },
     {
@@ -21,6 +21,17 @@ const qList = [
         instructions:'more stuff',
         code: 'blah3',
         test: 'blah4',
+        suite: 'conditionals'
+    },
+    {
+        instructions:'Create a function that takes in two numbers and returns the sum',
+        code: 'blah3',
+        test: 
+        [
+            `Test.assertEquals(sum(1,2), 3)`,
+            `Test.assertEquals(sum(0,-22), -22)`,
+            `Test.assertEquals(sum(-3,6), 3)`
+        ],
         suite: 'conditionals'
     }
 ];
