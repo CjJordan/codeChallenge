@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import CodeMirror from 'react-codemirror';
 import qList from './questions.js';
-import axois from 'axios';
+import axios from 'axios';
 require('codemirror/mode/javascript/javascript');
 
 class App extends Component {
@@ -10,7 +10,8 @@ class App extends Component {
     current: 0,
     code: "",
     house: "",
-    suite: "loops"
+    suite: "loops",
+    status:''
   }
 
   updateList = () => {
@@ -23,7 +24,7 @@ class App extends Component {
 
   incrementQuestion = () => {
     const newIndex = (this.state.current + 1) % this.state.questionList.length;
-    this.setState({current: newIndex}, this.updateCode)
+    this.setState({current: newIndex, status: ''}, this.updateCode)
   }
 
   updateCode = (newCode) => {
@@ -31,15 +32,21 @@ class App extends Component {
   }
 
   post = ()  => {
-    console.log('tests', this.state.questionList[this.state.current].tests);
-    console.log('qlist', this.state.questionList);
-    console.log('current', this.state.current);
-    console.log('currQlist', this.state.questionList[this.state.current]);
-    axois.post('/api/tests', {
-      code: this.state.code,
-      house_id: this.state.house,
-      tests: this.state.questionList[this.state.current].tests
-    }).then(response => console.log(response));
+    if(!this.state.questionList[this.state.current].done){
+      axios.post('/api/tests', {
+        code: this.state.code,
+        house_id: this.state.house,
+        tests: this.state.questionList[this.state.current].tests
+      }).then(response => {
+        if(response.data.success){
+          this.setState({status: 'success'});
+          this.state.questionList[this.state.current].done = true;
+        }
+        else {
+          this.setState({status: 'fail'})
+        }
+      });
+    }
   }
 
   render() {
@@ -49,7 +56,7 @@ class App extends Component {
     };
 
     return (
-      <div className='container'>
+      <div>
       <div className="page">
       <div className="select-dropdown">
         <select onChange={this.updateHouse}>
@@ -84,6 +91,7 @@ class App extends Component {
             defaultValue={this.state.code}
            />
         </div>
+        <div id="response" className={this.state.status}></div>
         <button onClick={this.post}>Submit</button>
         <button onClick={this.incrementQuestion}>Next</button>
       </div>
