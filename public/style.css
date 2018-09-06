@@ -1,5 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: #2c2f34;
+  }
+  
+  html, body {
+    height: 100%;
+  }
+  
+  .page {
+    width: 250px;
+  }
+  
+  .select-dropdown {
+    position: relative;
+    background-color: #e6e6e6;
+    width: auto;
+    max-width: 100%;
+    border-radius: 2px;
+    margin: 20px;
+  }
+
+  .select-dropdown select {
+    font-family: "helvetica neue", helvetica;
+    font-size: 1rem;
+    font-weight: 200;
+    max-width: 100%;
+    padding: 8px 24px 8px 10px;
+    border: none;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .select-dropdown select:active, .select-dropdown select:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  .select-dropdown:after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    right: 8px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #aaa;
+  }
+
+  
+
 .border {
     border: 1px solid #d8d8d8;
     width: 80%;
     margin: 20px auto;
 }
+
+.success {
+    background: #6b9323;
+}
+
+#response{
+    width: 150px;
+    height: 50px;
+    margin: 20px auto;
+}
+
+
+.fail {
+    background: #c92932;
+}
+
+button {
+    margin: 20px;
+    padding: 10px;
+    width: 150px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    color: #2c2f34;
+}
+
+.instructions{
+    padding: 10px;
+    margin: 20px auto;
+}
+
+h2 {
+    margin-bottom: 20px; 
+}
+
