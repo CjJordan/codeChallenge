@@ -41,10 +41,10 @@ class App extends Component {
       <div className='container'>
         <select onChange={this.updateHouse}>
           <option value="">Select a House</option>
-          <option value="raven">RavenClosure</option>
-          <option value="gryffin">GryffinDOM</option>
-          <option value="slyther">SlytherIndentYourCode</option>
-          <option value="github">GitHubblePuff</option>
+          <option value="2">RavenClosure</option>
+          <option value="1">GryffinDOM</option>
+          <option value="3">SlytherIndentYourCode</option>
+          <option value="4">GitHubblePuff</option>
         </select>
 
         <select onChange={this.updateSuite}>
