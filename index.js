@@ -18,6 +18,7 @@ app.get('/api/points', (req, res) => {
 });
 
 app.post('/api/tests', (req, res) => {
+  console.log(req.body);
   docker(req.body.code, req.body.tests)
     .then(message => {
       let success = true;
@@ -32,7 +33,7 @@ app.post('/api/tests', (req, res) => {
         db.House.update({
             points: db.sequelize.literal( "points + 1" )
           }, {
-            where: {id: req.body.id}
+            where: {id: req.body.house_id}
         })
         .then(function(data) {
           res.json({ success, message, data });
