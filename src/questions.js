@@ -23,7 +23,7 @@ const qList = [
         suite: "loops"
     },
     {
-        instructions:"Create a function called concatenator() that takes in an array of strings and concatenates them together with spaces between them. Return this string.",
+        instructions:"Create a function called concatenator() that takes in an array of strings and concatenates them together with spaces between them. Return this string. Use only single quotes for any strings you write.",
         tests: [
             "Test.assertEquals(concatenator(['hey', 'you', 'guys']), 'hey you guys')",
             "Test.assertEquals(concatenator(['a', 'b', 'c']), 'a b c')",
@@ -66,7 +66,7 @@ const qList = [
         suite: "conditionals"
     },
     {
-        instructions:"Write a function called dayFinder() that takes in a number and returns the corresponding day of the week. Example: If the input is 1, the output is Monday. If the input is 2, the output is Tuesday. Notice that the day of the week is Capitalized.",
+        instructions:"Write a function called dayFinder() that takes in a number and returns the corresponding day of the week. Example: If the input is 1, the output is Monday. If the input is 2, the output is Tuesday. Notice that the day of the week is Capitalized. Use only single quotes for any strings you write.",
         tests: [
             "Test.assertEquals(dayFinder(1), 'Monday')",
             "Test.assertEquals(dayFinder(2), 'Tuesday')",
@@ -75,7 +75,7 @@ const qList = [
         suite: "conditionals"
     },
     {
-        instructions:"Write a function called messageGenerator() that takes in a boolean and returns the string 'success' if the boolean is true and 'error' otherwise.",
+        instructions:"Write a function called messageGenerator() that takes in a boolean and returns the string 'success' if the boolean is true and 'error' otherwise. Use only single quotes for any strings you write.",
         tests: [
             "Test.assertEquals(messageGenerator(true), 'success')",
             "Test.assertEquals(messageGenerator(false), 'error')"
