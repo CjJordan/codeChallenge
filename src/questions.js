@@ -42,17 +42,27 @@ const qList = [
     },
     {
         instructions:"Write a function called max() that takes in two numbers and returns the larger of the two.",
-        tests: ["Test.expect(total == 14878)"],
+        tests: [
+            "Test.assertEquals(max(2,3), 3)",
+            "Test.assertEquals(max(2,1), 2)",
+            "Test.assertEquals(max(2,-3), 2)"
+    ],
         suite: "conditionals"
     },
     {
         instructions:"Write a function called min() that takes in two numbers and returns the smaller of the two.",
-        tests: ["Test.expect(total == 14878)"],
+        tests: [
+            "Test.assertEquals(min(2,3), 2)",
+            "Test.assertEquals(min(2,1), 1)",
+            "Test.assertEquals(min(2,-3), -3)"
+    ],
         suite: "conditionals"
     },
     {
         instructions:"Create a global variable called num and set it equal to 9. Create a global variable called a that is equal to 1. Write a conditional that sets a equal to 5 if num is greater than a.",
-        tests: ["Test.expect(a == 5)"],
+        tests: [
+            "Test.expect(a == 5)"
+    ],
         suite: "conditionals"
     },
     {

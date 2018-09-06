@@ -74,7 +74,6 @@ class App extends Component {
           <option value="loops">Select a Collection</option>
           <option value="loops">loops</option>
           <option value="conditionals">conditionals</option>
-          <option value="functions">functions</option>
         </select>
         </div>
         </div>
