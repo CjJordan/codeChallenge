@@ -13,7 +13,7 @@ module.exports = function(script, test) {
         } else {
           if (stdOut.search(/<ERROR::>/) > -1) {
             stdOut = stdOut.replace(/<:LF:>/g, '\\n')
-              replace(/\s/g, '\\s');
+             .replace(/\s/g, '\\s');
             reject(stdOut);
           } else {
             let output = stdOut.split(/\n/g);
