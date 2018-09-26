@@ -13,8 +13,14 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, './build')));
 
+const backupPoints = ['BLANK',0,0,0,0];
 app.get('/api/points', (req, res) => {
   db.House.findAll({}).then(rows => res.json(rows)).catch(err => console.error(err));
+});
+
+
+app.get('/api/alt', (req, res) => {
+  res.json({backupPoints});
 });
 
 app.post('/api/tests', (req, res) => {
@@ -30,14 +36,14 @@ app.post('/api/tests', (req, res) => {
       });
 
       if( success ){
+	backupPoints[req.body.house_id]++;
         db.House.update({
             points: db.sequelize.literal( "points + 1" )
           }, {
             where: {id: req.body.house_id}
         })
-        .then(function(data) {
-          res.json({ success, message, data });
-        }).catch(error => res.json({ error }));
+	.catch(error => res.json({ error }));
+          res.json({ success, message });
       } else {
         res.json({ success, message });
       }
