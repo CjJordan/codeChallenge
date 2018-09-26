@@ -98,9 +98,6 @@ output: true
         suite: 'practice1'
     },
     {
-        instructions:'Create a loop that sums the number from 1 to 172, inclusively. Save the sum in a global variable called total.',
-        tests: ['Test.expect(total == 14878)'],
-        suite: 'loops'
         instructions:"Create a loop that sums the number from 1 to 172, inclusively. Save the sum in a global variable called total.",
         tests: ["Test.expect(total == 14878)"],
         suite: "loops"
