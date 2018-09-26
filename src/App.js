@@ -12,7 +12,8 @@ class App extends Component {
     code: "",
     house: "",
     suite: "loops",
-    status: ''
+    status: '',
+    name: ''
   }
 
   updateList = () => {
@@ -22,6 +23,9 @@ class App extends Component {
   updateSuite = (e) => { this.setState({ suite: e.target.value }, this.updateList); }
 
   updateHouse = (e) => { this.setState({ house: e.target.value }) }
+
+  updateName = e => { this.setState({name: e.target.value}) }
+
 
   incrementQuestion = () => {
     const newIndex = (this.state.current + 1) % this.state.questionList.length;
@@ -36,7 +40,7 @@ class App extends Component {
     if (!this.state.questionList[this.state.current].done) {
       axios.post('/api/tests', {
         code: this.state.code,
-        house_id: this.state.house,
+        name: this.state.house,
         tests: this.state.questionList[this.state.current].tests
       }).then(response => {
         if (response.data.success) {
@@ -49,6 +53,8 @@ class App extends Component {
       });
     }
   }
+
+
 
   render() {
     const options = {

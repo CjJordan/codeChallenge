@@ -35,7 +35,7 @@ output: 12.56
     tests: [
         'Test.assertDeepEquals(getCircumference(1), 6.28)',
         'Test.assertDeepEquals(getCircumference(2), 12.56)',
-        'Test.assertDeepEquals(getCircumference(5), 31.4)',
+        'Test.assertDeepEquals(getCircumference(4), 25.12)',
     ],
         suite: 'practice1'
     },

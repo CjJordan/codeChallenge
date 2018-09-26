@@ -40,7 +40,7 @@ app.post('/api/tests', (req, res) => {
         db.House.update({
             points: db.sequelize.literal( "points + 1" )
           }, {
-            where: {id: req.body.house_id}
+            where: {name: req.body.name}
         })
 	.catch(error => res.json({ error }));
           res.json({ success, message });

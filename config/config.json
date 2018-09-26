@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "root",
     "database": "house_db",
     "host": "localhost",
     "port": 3306,
