@@ -1,5 +1,103 @@
 const qList = [
     {
+        instructions:
+`Create a function called isZero(). The function will take in a number and return true if the number is zero, otherwise it will return false.
+
+Sample:
+input: 0
+output: true
+
+input: 2
+output: false
+`,
+    tests: [
+        'Test.assertDeepEquals(isZero(1), false)',
+        'Test.assertDeepEquals(isZero(0), true)',
+        'Test.assertDeepEquals(isZero(-4), false)',
+    ],
+        suite: 'practice1'
+    },
+    {
+        instructions:
+`Create a function called getCircumference(). The function will take in a number representing the radius of a circle and return a number representing the circumference of the circle. 
+The equation for determining the circumference of a circle utilizes the constant PI.
+Assume that PI equals 3.14.
+
+The equation for finding the circumference of a circle is PI multiplied by double the radius. 
+
+Sample:
+input: 1
+output: 6.28
+
+input: 2
+output: 12.56
+`,
+    tests: [
+        'Test.assertDeepEquals(getCircumference(1), 6.28)',
+        'Test.assertDeepEquals(getCircumference(2), 12.56)',
+        'Test.assertDeepEquals(getCircumference(5), 31.4)',
+    ],
+        suite: 'practice1'
+    },
+    {
+        instructions:
+`Create a function called difference() that takes an array of numbers as a parameter and returns the result of all the numbers in the array subtracted from 100. 
+
+Sample:
+input: [1, 2, 3, 4]
+output: 90
+
+input: [100, 2, 5] 
+output: -7
+`,
+    tests: [
+        'Test.assertDeepEquals(difference([1, 2, 3, 4]), 90)',
+        'Test.assertDeepEquals(difference([100, 2, 5]), -7)', 
+        'Test.assertDeepEquals(difference([-5,-2]), 107)' 
+      ],
+        suite: 'practice1'
+    },
+    {
+        instructions:
+`Create a function called isIncluded() that takes 2 parameters - the first is an array, the second is an element that may or may not be in the array. 
+Return true if the element is in the array or false otherwise. 
+
+Sample:
+input: [1, 2, 3, 4] 3
+output: true
+
+input: [1, 2, 3, 4] 7
+output: false
+
+input: ['blue', 'green', 'red'] 'blue'
+output: true
+`,
+    tests: [
+        'Test.assertDeepEquals(isIncluded([1, 2, 3, 4], 3), true)',
+        'Test.assertDeepEquals(isIncluded([1, -2, 3, 4], -7), false)',
+        'Test.assertDeepEquals(isIncluded([\'weird\', \'science\',\'panopto\'], \'panopto\'), true)',
+    ],
+        suite: 'practice1'
+    },
+    {
+        instructions:
+`Create a function called isValidPassword() that takes a string as a parameter and determines if it is a valid password with the following constraints: 
+
+1. It must be at least 8 characters long
+2. It must contain at least 1 capital letter
+3. It must contain at least 1 lower case letter
+4. It must contain at least 1 number
+`,
+    tests: [
+        'Test.assertDeepEquals(isValidPassword(\'GoogleyBob99\'), true)',
+        'Test.assertDeepEquals(isValidPassword(\'googleybob99\'), false)',
+        'Test.assertDeepEquals(isValidPassword(\'GoogleyBob\'), false)',
+        'Test.assertDeepEquals(isValidPassword(\'hjuhi76675HHgjhyjf8\'), true)',
+        'Test.assertDeepEquals(isValidPassword(\'hj5Hgf8\'), false)'
+    ],
+        suite: 'practice1'
+    },
+    {
         instructions:'Create a loop that sums the number from 1 to 172, inclusively. Save the sum in a global variable called total.',
         tests: ['Test.expect(total == 14878)'],
         suite: 'loops'

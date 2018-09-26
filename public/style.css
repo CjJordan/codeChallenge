@@ -94,3 +94,7 @@ h2 {
     margin-bottom: 20px; 
 }
 
+.instructions {
+    white-space: pre-wrap;
+}
+
